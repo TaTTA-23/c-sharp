@@ -1,1 +1,52 @@
 
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        //Criando uma instância da classe FraudulentOrderIDs
+        FraudulentOrderIDs fraudulentOrder = new FraudulentOrderIDs();
+        //Exibindo os IDs fraudulentos
+        fraudulentOrder.DisplayOrderIDs();
+    }
+}
+
+ public  class FraudulentOrderIDs
+{
+    //Declaraçao do array
+    string[]  fraudulentOrderIDs;
+    
+    // Construtor da classe
+    public  FraudulentOrderIDs()
+    {
+        /*
+        //Inicialização do array dentro do construtor
+        fraudulentOrderIDs = new string[3];
+        fraudulentOrderIDs [0] = "A123";
+        fraudulentOrderIDs [1] = "B456";
+        fraudulentOrderIDs [2] = "C789";
+        */
+        fraudulentOrderIDs = new string[]  {"A123", "B456", "C789"};
+        //Exibindo os IDs iniciais
+        Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+        Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+        Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+        
+        //Reabrindo o primeiro ID
+        fraudulentOrderIDs[0] = "F000";
+        
+        //Exibindo o ID após reatribuição
+        Console.WriteLine($"Reassing First: {fraudulentOrderIDs[0]}");
+        Console.WriteLine($"These are {fraudulentOrderIDs.Length}fraudulent orders to process.");
+        }
+        //Método para exibir todos os IDs fraudulentos
+        public void DisplayOrderIDs()
+        {
+            //Exibe todos os IDs do array
+            foreach (var id in fraudulentOrderIDs)
+        {
+            Console.WriteLine(id);
+        }
+    }
+}
