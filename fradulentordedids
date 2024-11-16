@@ -1,4 +1,11 @@
+/* 
+Desafio de codificação – Reportar as IDs de pedido que precisam de uma 
+investigação mais aprofundada.
+Pedidos que começam com a letra "B" têm uma taxa de incidência de fraude 25 vezes maior que o normal. 
+Você escreverá um novo código para imprimir na saída a ID de novos pedidos que comecem com a letra "B". 
+Isso será usado pela nossa equipe anti-fraude para investigar mais a fundo.
 
+*/
 using System;
 
 public class Program
@@ -7,8 +14,8 @@ public class Program
     {
         //Criando uma instância da classe FraudulentOrderIDs
         FraudulentOrderIDs fraudulentOrder = new FraudulentOrderIDs();
-        //Exibindo os IDs fraudulentos
-        fraudulentOrder.DisplayOrderIDs();
+        //Exibindo os IDs fraudulentos que começam com 'B'
+        fraudulentOrder.DisplayItemsStartingWithB();
     }
 }
 
@@ -20,33 +27,26 @@ public class Program
     // Construtor da classe
     public  FraudulentOrderIDs()
     {
-        /*
         //Inicialização do array dentro do construtor
-        fraudulentOrderIDs = new string[3];
-        fraudulentOrderIDs [0] = "A123";
-        fraudulentOrderIDs [1] = "B456";
-        fraudulentOrderIDs [2] = "C789";
-        */
-        fraudulentOrderIDs = new string[]  {"A123", "B456", "C789"};
-        //Exibindo os IDs iniciais
-        Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
-        Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
-        Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+        fraudulentOrderIDs = new string[]  {"B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179"};
         
-        //Reabrindo o primeiro ID
-        fraudulentOrderIDs[0] = "F000";
-        
-        //Exibindo o ID após reatribuição
-        Console.WriteLine($"Reassing First: {fraudulentOrderIDs[0]}");
-        Console.WriteLine($"These are {fraudulentOrderIDs.Length}fraudulent orders to process.");
         }
-        //Método para exibir todos os IDs fraudulentos
-        public void DisplayOrderIDs()
+        //Método para exibir todos os IDs fraudulentos 'B'
+        public void DisplayItemsStartingWithB()
         {
             //Exibe todos os IDs do array
-            foreach (var id in fraudulentOrderIDs)
+            Console.WriteLine("\nItens no inventário que começam com 'B': ");
+            foreach (string item in fraudulentOrderIDs)
+            
+            {
+                //verifica se o item começa com 'B' (não diferencia maiúscula de minúscula)
+                if (item.StartsWith("B", StringComparison.OrdinalIgnoreCase))
+            
         {
-            Console.WriteLine(id);
+            
+            Console.WriteLine(item);
+            }
         }
     }
 }
+
