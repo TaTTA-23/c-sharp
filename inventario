@@ -14,8 +14,9 @@ public class Program
         // Criando uma instância da classe InventoryOrder
         InventoryOrder inventoryOrder = new InventoryOrder();
         
-        // Exibindo os itens do inventário
+       /* // Exibindo os itens do inventário
         inventoryOrder.DisplayInventory();
+        */
     }
 }
 
@@ -24,6 +25,7 @@ public class InventoryOrder
     // Declaração do array (campo da classe)
     int[] inventoryOrder;
     int sum = 0;
+    int bin = 0;
     // Construtor da classe
     public InventoryOrder()
     {
@@ -36,13 +38,15 @@ public class InventoryOrder
         foreach (int item in inventoryOrder)
         {
             sum += item;
+            bin++;
+            Console.WriteLine($"Bin {bin} = {item} items (Running total: {sum}).");
         }
         {
             Console.WriteLine($"We have {sum} items in inventory.");
         }
     }
 
-    // Método para exibir os itens do inventário
+    /*// Método para exibir os itens do inventário
     public void DisplayInventory()
     {
         Console.WriteLine("\nItens no inventário (via DisplayInventory):");
@@ -50,5 +54,6 @@ public class InventoryOrder
         {
             Console.WriteLine(item);
         }
+        */
     }
-}
+
