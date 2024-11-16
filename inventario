@@ -23,7 +23,7 @@ public class InventoryOrder
 {
     // Declaração do array (campo da classe)
     int[] inventoryOrder;
-
+    int sum = 0;
     // Construtor da classe
     public InventoryOrder()
     {
@@ -32,9 +32,13 @@ public class InventoryOrder
 
         // Exibindo os itens dentro do construtor
         Console.WriteLine("Itens no inventário inicial:");
+        
         foreach (int item in inventoryOrder)
         {
-            Console.WriteLine(item);
+            sum += item;
+        }
+        {
+            Console.WriteLine($"We have {sum} items in inventory.");
         }
     }
 
