@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("coloso_pets_app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+160d3a04f1a8b979a9545e826073f1306ab1ef5b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06a0ab49dcb5506985e42dd0cf287999f6ecad7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("coloso_pets_app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("coloso_pets_app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
