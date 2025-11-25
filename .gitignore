@@ -1,0 +1,8 @@
+# .gitignore (mínimo para .NET)
+bin/
+obj/
+.vs/
+*.user
+*.suo
+.idea/
+.vscode/
