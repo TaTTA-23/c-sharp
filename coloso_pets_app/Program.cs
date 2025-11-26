@@ -284,14 +284,127 @@ while (running)
             break;
 
         case "3":
-            Console.WriteLine("Opção 3: Completar idades e descrições físicas — recurso ainda não implementado. (placeholder)");
+            // Ensure animal ages and physical descriptions are complete
+            Console.WriteLine("Verificando idades e descrições físicas dos animais...");
+
+            for (int idx = 0; idx < maxPets; idx++)
+            {
+                // skip entries that are default/empty
+                if (string.IsNullOrWhiteSpace(ourAnimals[idx, 0]) || ourAnimals[idx, 0] == "ID #: ")
+                {
+                    continue;
+                }
+
+                // show the current ID
+                Console.WriteLine($"\nVerificando {ourAnimals[idx, 0]}");
+
+                // --- validate age ---
+                // ourAnimals[idx,2] is like "Age: 2" or "Age: ?"
+                string currentAgeField = ourAnimals[idx, 2] ?? "";
+                string currentAge = currentAgeField.Replace("Age:", "").Trim();
+
+                int parsedAge;
+                while (!int.TryParse(currentAge, out parsedAge))
+                {
+                    Console.WriteLine($"Idade ausente ou inválida (atual: '{currentAge}'). Digite uma idade numérica para {ourAnimals[idx, 0]}:");
+                    readResult = Console.ReadLine();
+                    if (readResult != null)
+                    {
+                        currentAge = readResult.Trim();
+                    }
+                    else
+                    {
+                        currentAge = "";
+                    }
+                }
+                // assign validated age back to array
+                ourAnimals[idx, 2] = "Age: " + parsedAge.ToString();
+
+                // --- validate physical description ---
+                string currentPhysField = ourAnimals[idx, 4] ?? "";
+                string phys = currentPhysField.Replace("Physical description:", "").Trim();
+
+                while (string.IsNullOrEmpty(phys))
+                {
+                    Console.WriteLine($"Descrição física ausente para {ourAnimals[idx, 0]}. Insira uma descrição física (tamanho, cor, gênero, peso, housebroken):");
+                    readResult = Console.ReadLine();
+                    if (readResult != null)
+                    {
+                        phys = readResult.Trim();
+                    }
+                    else
+                    {
+                        phys = "";
+                    }
+                }
+                ourAnimals[idx, 4] = "Physical description: " + phys;
+            }
+
+            Console.WriteLine("\nTodos os animais cadastrados têm idades numéricas válidas e descrições físicas preenchidas.");
             Console.WriteLine("Pressione Enter para retornar ao menu...");
             Console.ReadLine();
             break;
 
         case "4":
-            Console.WriteLine("Opção 4: Completar apelidos e descrições de personalidade — recurso ainda não implementado. (placeholder)");
-            Console.WriteLine("Pressione Enter para retornar ao menu...");
+            // Ensure animal nicknames and personality descriptions are complete
+            Console.WriteLine("Verificando apelidos e descrições de personalidade dos animais...");
+
+            for (int idx = 0; idx < maxPets; idx++)
+            {
+                // skip entries that are default/empty
+                if (string.IsNullOrWhiteSpace(ourAnimals[idx, 0]) || ourAnimals[idx, 0] == "ID #: ")
+                {
+                    continue;
+                }
+
+                Console.WriteLine($"\nEnter a nickname for {ourAnimals[idx, 0]}");
+                string currentNickField = ourAnimals[idx, 3] ?? "";
+                string nick = currentNickField.Replace("Nickname:", "").Trim();
+
+                while (string.IsNullOrEmpty(nick))
+                {
+                    readResult = Console.ReadLine();
+                    if (readResult != null)
+                    {
+                        nick = readResult.Trim();
+                    }
+                    else
+                    {
+                        nick = "";
+                    }
+                    if (string.IsNullOrEmpty(nick))
+                    {
+                        Console.WriteLine($"Enter a nickname for {ourAnimals[idx, 0]}");
+                    }
+                }
+                ourAnimals[idx, 3] = "Nickname: " + nick;
+
+                // personality
+                Console.WriteLine($"Enter a personality description for {ourAnimals[idx, 0]} (likes or dislikes, tricks, energy level)");
+                string currentPersField = ourAnimals[idx, 5] ?? "";
+                string pers = currentPersField.Replace("Personality:", "").Trim();
+
+                while (string.IsNullOrEmpty(pers))
+                {
+                    readResult = Console.ReadLine();
+                    if (readResult != null)
+                    {
+                        pers = readResult.Trim();
+                    }
+                    else
+                    {
+                        pers = "";
+                    }
+                    if (string.IsNullOrEmpty(pers))
+                    {
+                        Console.WriteLine($"Enter a personality description for {ourAnimals[idx, 0]} (likes or dislikes, tricks, energy level)");
+                    }
+                }
+                ourAnimals[idx, 5] = "Personality: " + pers;
+            }
+
+            Console.WriteLine("\nNickname and personality description fields are complete for all of our friends.");
+            Console.WriteLine("Press the Enter key to continue");
             Console.ReadLine();
             break;
 
