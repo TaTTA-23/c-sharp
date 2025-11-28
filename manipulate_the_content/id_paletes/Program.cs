@@ -1,4 +1,5 @@
 ﻿/*string[] pallets =  ["B14", "A11", "B12", "A13" ];
+string[] pallets = [ "B14", "A11", "B12", "A13" ];
 Console.WriteLine("");
 
 Array.Clear(pallets, 0, 2);
@@ -122,3 +123,14 @@ comparisonMessage += String.Format("{0:P}", newReturn).PadRight(10);
 comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
 
 Console.WriteLine(comparisonMessage);
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 3);
+Console.WriteLine($"Resizing 3 ... count: {pallets.Length}");
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
