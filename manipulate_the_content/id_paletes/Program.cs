@@ -124,7 +124,7 @@ comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
 
 Console.WriteLine(comparisonMessage);
     Console.WriteLine($"-- {pallet}");
-}
+
 
 Console.WriteLine("");
 Array.Resize(ref pallets, 3);
