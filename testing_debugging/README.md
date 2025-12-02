@@ -1,0 +1,1 @@
+Neste módulo, você conhecerá a diferença entre teste, depuração e tratamento de abordagens. Você analisará o processo de depuração de código e os benefícios oferecidos pelos depuradores de código. Você também aprenderá mais sobre as abordagens e como elas são usadas em um aplicativo.
