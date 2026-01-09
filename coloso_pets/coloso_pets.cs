@@ -87,8 +87,8 @@ while (running)
     Console.WriteLine(" 2. Add a new animal friend to the ourAnimals array");
     Console.WriteLine(" 3. Ensure animal ages and physical descriptions are complete");
     Console.WriteLine(" 4. Ensure animal nicknames and personality descriptions are complete");
-    Console.WriteLine(" 5. Edit an animal’s age");
-    Console.WriteLine(" 6. Edit an animal’s personality description");
+    Console.WriteLine(" 5. Edit an animal's age");
+    Console.WriteLine(" 6. Edit an animal's personality description");
     Console.WriteLine(" 7. Display all cats with a specified characteristic");
     Console.WriteLine(" 8. Display all dogs with a specified characteristic");
     Console.WriteLine();
@@ -185,3 +185,4 @@ while (running)
             break;
     }
 }
+

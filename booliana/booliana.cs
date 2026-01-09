@@ -18,3 +18,4 @@ if (message.Contains("fox"))
         
 }
 } 
+
