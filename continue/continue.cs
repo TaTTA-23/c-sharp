@@ -21,3 +21,4 @@ public class Aleatorio
     } while (current != 7);
   }
 }
+
